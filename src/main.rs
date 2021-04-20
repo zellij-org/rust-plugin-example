@@ -24,7 +24,7 @@ impl ZellijPlugin for State {
             Event::KeyPress(Key::Ctrl('l')) => self.log.clear(),
             Event::KeyPress(Key::Ctrl('w')) => {
                 if let Ok(mut f) = File::create("mode-log.txt") {
-                    for (mode, time) in &self.log {
+                    for (mode, time) in self.log.iter().rev() {
                         writeln!(f, "{}: Entered {} Mode", time.format("%c"), mode).unwrap();
                     }
                 }
