@@ -5,8 +5,11 @@ It's a very simple event logger that can detect Zellij mode changes, display the
 
 You can learn more about developing plugins in the [Zellij Documentation][docs], which walks through writing this example plugin.
 
+If you're looking for a template to get you started, you might find the [rust-plugin-template][template] repository helpful!
+
 [zellij]: https://github.com/zellij-org/zellij
 [docs]: https://zellij.dev/documentation/plugins.html
+[template]: https://github.com/zellij-org/rust-plugin-template
 
 ## Usage
 
