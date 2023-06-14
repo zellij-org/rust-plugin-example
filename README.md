@@ -1,25 +1,30 @@
 ## About
 
-This is an example [Zellij][zellij] plugin in Rust.
-It's a very simple event logger that can detect Zellij mode changes, display them to the screen, and eventually write them to a file.
+This is an example [Zellij][zellij] plugin in Rust. It can be used as a template to start developing your own plugins.
 
-You can learn more about developing plugins in the [Zellij Documentation][docs], which walks through writing this example plugin.
-
-If you're looking for a template to get you started, you might find the [rust-plugin-template][template] repository helpful!
+More about Zellij plugins: [Zellij Documentation][docs]
 
 [zellij]: https://github.com/zellij-org/zellij
 [docs]: https://zellij.dev/documentation/plugins.html
-[template]: https://github.com/zellij-org/rust-plugin-template
 
-## Usage
+## Development
 
-### Build with `cargo` and Test in Zellij
+## Inside Zellij
 
-```sh
-# If you don't have Zellij installed already
-cargo install zellij
-# Building the plugin
-cargo build
-# Running in Zellij
-zellij -l plugin.yaml
+You can load the `./plugin-dev-workspace.kdl` file as a Zellij layout to get a terminal development environment:
+
+Either when starting Zellij:
 ```
+zellij --layout ./plugin-dev-workspace.kdl
+```
+
+Or from a running Zellij session:
+```bash
+zellij action new-tab --layout ./plugin-dev-workspace.kdl
+```
+
+## Otherwise
+
+1. Build the project: `cargo build`
+2. Load it inside a running Zellij session: `zellij action start-or-reload-plugin file:target/wasm32-wasi/debug/rust-plugin-example.wasm`
+3. Repeat on changes (perhaps with a `watchexec` or similar command to run on fs changes).
