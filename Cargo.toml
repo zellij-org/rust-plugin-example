@@ -1,9 +1,10 @@
 [package]
 name = "rust-plugin-example"
 version = "0.1.0"
-authors = ["Brooks J Rady <b.j.rady@gmail.com>"]
+authors = ["Aram Drevekenin <aram@poor.dev>"]
 edition = "2018"
 
 [dependencies]
-zellij-tile = "1.0.0"
+ansi_term = "0.12.1"
+zellij-tile = "0.37.0"
 chrono = "0.4.0"
