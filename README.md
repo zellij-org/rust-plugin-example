@@ -10,6 +10,8 @@ More about Zellij plugins: [Zellij Documentation][docs]
 ## Development
 
 ## Inside Zellij
+![img-2023-06-14-143355](https://github.com/zellij-org/rust-plugin-example/assets/795598/d9e563dc-5d71-4e10-af5b-190365bdca3b)
+
 
 You can load the `./plugin-dev-workspace.kdl` file as a Zellij layout to get a terminal development environment:
 
