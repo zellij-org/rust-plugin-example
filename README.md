@@ -19,6 +19,7 @@ Either when starting Zellij:
 ```
 zellij --layout ./plugin-dev-workspace.kdl
 ```
+*Note that in this case there's a small bug where the plugin is opened twice, it can be remedied by closing the oldest instance or loading with the new-tab action as secified below - this will be addressed in the near future*
 
 Or from a running Zellij session:
 ```bash
