@@ -34,7 +34,7 @@ impl ZellijPlugin for State {
             Event::Key(key) => {
                 if let Key::Char('n') = key {
                     self.test_runs += 1;
-                    open_command_pane_floating(&PathBuf::from("cargo"), vec!["test".into()]);
+                    open_command_pane_floating("cargo", vec!["test"]);
                 }
             }
             _ => (),
