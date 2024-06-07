@@ -22,7 +22,10 @@ impl ZellijPlugin for State {
         request_permission(&[PermissionType::ReadApplicationState, PermissionType::RunCommands]);
         subscribe(&[EventType::ModeUpdate, EventType::TabUpdate, EventType::Key]);
     }
-
+    fn pipe (&mut self, pipe_message: PipeMessage) -> bool {
+        eprintln!("pipe_message: {:?}", pipe_message);
+        true
+    }
     fn update(&mut self, event: Event) -> bool {
         let mut should_render = false;
         match event {
@@ -43,7 +46,7 @@ impl ZellijPlugin for State {
                         path: "cargo".into(),
                         args: vec!["test".to_owned()],
                         cwd: None,
-                    });
+                    }, None);
                 }
             }
             _ => (),
