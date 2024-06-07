@@ -13,10 +13,7 @@ layout {
                     // args "-c" "watchexec 'cargo build && zellij action start-or-reload-plugin file:target/wasm32-wasi/debug/rust-plugin-example.wasm'"
                 }
                 pane expanded=true {
-                    plugin location="file:target/wasm32-wasi/debug/rust-plugin-example.wasm" {
-                        config_key "config_value"
-                        print_config true
-                    }
+                    plugin location="file:target/wasm32-wasi/debug/rust-plugin-example.wasm"
                 }
             }
         }
