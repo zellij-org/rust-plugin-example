@@ -39,15 +39,13 @@ impl ZellijPlugin for State {
                 self.tabs = tab_info.iter().map(|t| t.name.clone()).collect();
                 should_render = true;
             }
-            Event::Key(key) => {
-                if let Key::Char('n') = key {
-                    self.test_runs += 1;
-                    open_command_pane_floating(CommandToRun {
-                        path: "cargo".into(),
-                        args: vec!["test".to_owned()],
-                        cwd: None,
-                    }, None);
-                }
+            Event::Key(Key::Char('n')) => {
+                self.test_runs += 1;
+                open_command_pane_floating(CommandToRun {
+                    path: "cargo".into(),
+                    args: vec!["test".to_owned()],
+                    cwd: None,
+                }, None);
             }
             _ => (),
         };
@@ -57,21 +55,21 @@ impl ZellijPlugin for State {
     fn render(&mut self, rows: usize, cols: usize) {
         let colored_rows = color_bold(CYAN, &rows.to_string());
         let colored_cols = color_bold(CYAN, &cols.to_string());
-        println!("");
+        println!();
         println!("I have {} rows and {} columns", colored_rows, colored_cols);
-        println!("");
+        println!();
         println!("{} {:#?}", color_bold(GREEN, "I was started with the following user configuration:"), self.userspace_configuration);
-        println!("");
+        println!();
         println!("{}", color_bold(GREEN, "Modes:"));
         for (mode, count) in &self.mode_log {
             let count = color_bold(ORANGE, &count.to_string());
             println!("{} -> Changed {} times", mode, count);
         }
-        println!("");
+        println!();
         let current_tabs = color_bold(GREEN, "Current Tabs:");
         let comma = color_bold(ORANGE, ", ");
         println!("{} {}", current_tabs, self.tabs.join(&comma));
-        println!("");
+        println!();
         if self.test_runs > 0 {
             let test_run_count = color_bold(CYAN, &self.test_runs.to_string());
             println!("Ran tests {} times!", test_run_count);
