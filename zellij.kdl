@@ -1,0 +1,16 @@
+layout {
+    cwd "."
+    pane size=1 borderless=true {
+        plugin location="tab-bar"
+    }
+    pane edit="src/main.rs" size="80%"
+    pane
+    pane size=1 borderless=true {
+        plugin location="status-bar"
+    }
+    floating_panes {
+      pane {
+        plugin location="https://github.com/zellij-org/develop-rust-plugin/releases/download/v0.1.0/develop-rust-plugin.wasm"
+      }
+    }
+}
