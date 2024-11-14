@@ -13,6 +13,9 @@ More about Zellij plugins: [Zellij Documentation][docs]
 
 ### With the Provided Layout
 
+![img-2024-11-14-100111](https://github.com/user-attachments/assets/e3bae15c-1f94-4d4a-acea-a036f8afdf67)
+
+
 Run `zellij -l zellij.kdl` at the root of this repository. This will open a development environment that will help you develop the plugin inside Zellij.
 
 It can also be used if you prefer developing outside of the terminal - in this case you should ignore the `$EDITOR` pane and use your IDE instead.
