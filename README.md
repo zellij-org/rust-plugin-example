@@ -11,23 +11,13 @@ More about Zellij plugins: [Zellij Documentation][docs]
 
 *Note*: you will need to have `wasm32-wasi` added to rust as a target to build the plugin. This can be done with `rustup target add wasm32-wasi`.
 
-## Inside Zellij
-![img-2023-06-14-143355](https://github.com/zellij-org/rust-plugin-example/assets/795598/d9e563dc-5d71-4e10-af5b-190365bdca3b)
+### With the Provided Layout
 
-You can load the `./plugin-dev-workspace.kdl` file as a Zellij layout to get a terminal development environment:
+Run `zellij -l zellij.kdl` at the root of this repository. This will open a development environment that will help you develop the plugin inside Zellij.
 
-Either when starting Zellij:
-```
-zellij --layout ./plugin-dev-workspace.kdl
-```
-*Note that in this case there's a small bug where the plugin is opened twice, it can be remedied by closing the oldest instance or loading with the new-tab action as secified below - this will be addressed in the near future*
+It can also be used if you prefer developing outside of the terminal - in this case you should ignore the `$EDITOR` pane and use your IDE instead.
 
-Or from a running Zellij session:
-```bash
-zellij action new-tab --layout ./plugin-dev-workspace.kdl
-```
-
-## Otherwise
+### Otherwise
 
 1. Build the project: `cargo build`
 2. Load it inside a running Zellij session: `zellij action start-or-reload-plugin file:target/wasm32-wasi/debug/rust-plugin-example.wasm`
