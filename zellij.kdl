@@ -10,7 +10,7 @@ layout {
     }
     floating_panes {
       pane {
-        plugin location="https://github.com/zellij-org/develop-rust-plugin/releases/download/v0.1.0/develop-rust-plugin.wasm"
+        plugin location="https://github.com/zellij-org/develop-rust-plugin/releases/download/v0.3.0/develop-rust-plugin.wasm"
       }
     }
 }
